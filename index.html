@@ -7,26 +7,41 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <section id="tokens">
+    <nav><img src="imgs/logo.png" /></nav>
+    <section id="main">
+        <section id="tokens">
+            <div class="tokenEl tokenHeader">
+                <div class="tokenEl tokenHeader"></div>
+                <div class="tokenEl tokenHeader">Number</div>
+                <div class="tokenEl tokenHeader">Value</div>
+            </div>
+        </section>
+        <section id="bag">
+
+        </section>
+        <section id="testAndResult">
+            <section id="test">
+                <div>
+                    <label>Test Difficulty</label>
+                    <input id="diffVal" value="0" />
+                </div>
+                <div>
+                    <label>Your Value</label>
+                    <input id="testVal" value="0" />
+                </div>
+                <button id="calc">Calculate</button>
+            </section>
+            <section id="results">
+                <p class="chanceType">Win chance: </p><p class="chanceResult" id="winResult"></p>
+                <p class="chanceType">Skull chance: </p><p class="chanceResult" id="skullResult"></p>
+                <p class="chanceType">Bullshit chance: </p><p class="chanceResult" id="bullshitResult"></p>
+                <p class="chanceType">Win by 2+: </p><p class="chanceResult" id="by2orMoreResult"></p>
+                <p class="chanceType">Fail by 2-: </p><p class="chanceResult" id="failBy2"></p>
+            </section>
+        </section>
+
     </section>
-    <section id="test">
-        <div>
-            <label>Test Difficulty</label>
-            <input id="diffVal" />
-        </div>
-        <div>
-            <label>Your Value</label>
-            <input id="testVal" />
-        </div>
-        <button id="calc">Calculate</button>
-    </section>
-    <section id="results">
-        <p class="chanceType">Win chance: </p><p class="chanceResult" id="winResult"></p>
-        <p class="chanceType">Skull chance: </p><p class="chanceResult" id="skullResult"></p>
-        <p class="chanceType">Bullshit chance: </p><p class="chanceResult" id="bullshitResult"></p>
-        <p class="chanceType">Win by 2+: </p><p class="chanceResult" id="by2orMoreResult"></p>
-        <p class="chanceType">Fail by 2-: </p><p class="chanceResult" id="failBy2"></p>
-    </section>
+
 
     <script src="main.js"></script>
     <script src="createChaosBag.js"></script>

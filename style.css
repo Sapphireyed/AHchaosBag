@@ -1,12 +1,51 @@
-﻿#tokens {
-    width: 300px
+﻿body {
+    background-image: url('imgs/bg2.jpg');
+    color: white
+}
+nav img {
+    display:block;
+    margin:auto;
+}
+#main {
+    display: grid;
+    grid-template-columns: [line1] 25% [line2] 50% [line3] 25% [line4];
+}
+/*tokens section*/
+#tokens {
+    width: 300px;
+    margin-bottom:40px;
+}
+
+.tokenHeader {
+    font-size:20px;
+    font-weight: 700;
+}
+#tokens input {
+    background-color: rgba(255,255,255,.3);
+    height:15px;
+    border: none;
+    font-size: 16px;
+    border-radius: 15px;
+    padding: 3px;
+    text-align: center
 }
 
 .tokenEl {
     display: grid;
-    grid-template-columns: [line1] 40% [line2] 30% [line3] 30% [line4]
+    grid-template-columns: [line1] 35% [line2] 25% [line3] 25% [line4];
+    align-items: center;
+    gap: 15px 10px;
 }
 
+.tokenEl img {
+    display:block;
+    margin: auto;
+}
+#create {
+    display: block;
+    margin: auto;
+    width: 40%;
+}
 #test {
     width: 300px
 }
@@ -16,9 +55,15 @@
 
     }
 
+    /* results section */
 #results {
     width: 300px;
     display: grid;
     grid-template-columns: [line1] 40% [line2] 30% [line3];
     grid-template-rows: repeat(4, 30px [col])
+}
+
+.tokenImg {
+    width:50px;
+    height:auto
 }

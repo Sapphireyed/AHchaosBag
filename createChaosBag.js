@@ -3,7 +3,7 @@ const finalBag = (obj) => {
     let vals = Array.from(document.querySelectorAll('.tokenNum'))
     vals.map((v, i) => {
         if (v.value != 0) {
-            let label = v.previousElementSibling.innerText
+            let label = v.previousElementSibling.id
             newBag.push({
                 name: label,
                 number: parseInt(v.value),
