@@ -4,20 +4,30 @@
 <head>
     <meta charset="utf-8" />
     <title>AH Chaos Bag Chances</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <section id="mainSection">
-        <button id="create">Create</button>
+    <section id="tokens">
     </section>
     <section id="test">
         <div>
             <label>Test Difficulty</label>
             <input id="diffVal" />
+        </div>
+        <div>
             <label>Your Value</label>
             <input id="testVal" />
         </div>
         <button id="calc">Calculate</button>
     </section>
+    <section id="results">
+        <p class="chanceType">Win chance: </p><p class="chanceResult" id="winResult"></p>
+        <p class="chanceType">Skull chance: </p><p class="chanceResult" id="skullResult"></p>
+        <p class="chanceType">Bullshit chance: </p><p class="chanceResult" id="bullshitResult"></p>
+        <p class="chanceType">Win by 2+: </p><p class="chanceResult" id="by2orMoreResult"></p>
+        <p class="chanceType">Fail by 2-: </p><p class="chanceResult" id="failBy2"></p>
+    </section>
+
     <script src="main.js"></script>
     <script src="createChaosBag.js"></script>
     <script src="calc.js"></script>

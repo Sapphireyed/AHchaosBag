@@ -5,8 +5,11 @@ const bag = {
     tablet: 0,
     ancient: 0,
     cultist: 0,
-    bless: 0,
-    '+1': 0
+    '0':0,
+    '+1': 0,
+    '-1': 0,
+    '-2': 0,
+    '-3': 0,
 }
 
 for (token in bag) {
@@ -20,16 +23,25 @@ for (token in bag) {
     let tokenNum = document.createElement('input')
     tokenNum.className = 'tokenNum'
     tokenNum.type = 'number'
-    tokenNum.max = 10;
-    tokenNum.min = 0;
     tokenNum.step = 1
-    tokenNum.value = 0
+    if (token === 'elder' || token === 'autoFail') {
+        tokenNum.max = 1;
+        tokenNum.min = 1;
+        tokenNum.value = 1
+    } else {
+        tokenNum.max = 10;
+        tokenNum.min = 0;
+        tokenNum.value = 0
+    }
+
 
     let tokenVal = document.createElement('input')
     tokenVal.className = 'tokenVal'
-
+    if (!['elder', 'skull', 'tablet', 'ancient', 'cultist'].some(el => el === token)) {
+        tokenVal.value = token
+    }
     tokenEl.append(tokenLabel, tokenNum, tokenVal)
-    document.getElementById('mainSection').appendChild(tokenEl)
+    document.getElementById('tokens').appendChild(tokenEl)
 }
 
 //let createdBag = []
