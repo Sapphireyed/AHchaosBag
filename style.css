@@ -30,6 +30,7 @@ nav img {
 #tokens {
     width: 300px;
     margin-bottom:40px;
+    z-index: 1
 }
 
 .tokenHeader {
@@ -83,14 +84,18 @@ nav img {
     font-size: 18px;
     width: 30%;
 }
-.buttonBag {
+#buttonsBag {
     position: absolute;
-    top: 37%;
-    left: 35%;
+    width: 35%;
+    top: 33%;
+    left: 30%;
     padding: 3px;
+    display: grid;
+    grid-template-columns: [line1] 50% [line2] 50% [line3];
+    z-index:1
 }
-#draw {
-    width: 10%
+#draw, #add {
+    width:60%
 }
 #bagContainer {
     position: relative;
@@ -108,14 +113,14 @@ nav img {
     display: grid;
     width: 80%;
     grid-template-columns: repeat(7, 14% [line]);
-    grid-template-rows: repeat( 25% [line]);
+    grid-template-rows: repeat( 20% [line]);
     align-self: end;
     justify-self: center;
     z-index: 1;
     padding: 15% 10%;
 }
     #bagTokens img {
-        width: 90%;
+        width: 100%;
         display: inline-block;
         margin: auto;
         justify-self: center;
