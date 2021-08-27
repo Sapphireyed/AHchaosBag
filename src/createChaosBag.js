@@ -34,7 +34,6 @@ document.getElementById('create').addEventListener('click', function () {
     let bagEl = document.getElementById('bagTokens')
     bagEl.innerHTML = ''
     createdBag.map(token => {
-        console.log('token', token)
         let bagToken = document.createElement('img')
         bagToken.src = "imgs/tokens/" + token.name + ".png"
         bagToken.setAttribute('next', token.next)

@@ -34,14 +34,12 @@ function calcWinChance(obj, testval, difficult, regular=true) {
             }
         }
         if (regular === false) {
- 
+            testVal = testVal > 0 ? 0 : testVal
+            console.log(testVal)
             let tempVal = el.name === 'Auto-fail' ? 0 : testVal
-            console.log('test', tempVal)
-            console.log('elval', el.name, el.value)
-            console.log('diff', diff)
-            console.log('res', (tempVal + el.value))
-            if (((tempVal + el.value) - diff == -2) || ((tempVal + el.value) - diff == -1)) {
-                console.log('yes')
+            let finalSkill = tempVal + el.value
+            finalSkill = finalSkill < 0 ? 0 : finalSkill
+            if ((finalSkill - diff == -2) || ((tempVal + el.value) - diff == -1)) {
                 loseBy2 = loseBy2 + parseInt(el.number)
             }
         }

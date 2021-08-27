@@ -30,7 +30,7 @@ for (token in bag) {
     tokenNum.step = 1
     if (token === 'Elder Sign' || token === 'Auto-fail') {
         tokenNum.max = 1;
-        tokenNum.min = 1;
+        tokenNum.min = 0;
         tokenNum.value = 1
     } else {
         tokenNum.max = 10;
@@ -38,14 +38,14 @@ for (token in bag) {
         tokenNum.value = 0
     }
 
-
     let tokenVal = document.createElement('input')
     tokenVal.className = 'tokenVal'
     tokenVal.type = 'number'
-    console.log(token === "1")
     if (!['Elder Sign', 'Skull', 'Tablet', 'Elder Thing', 'Cultist'].some(el => el === token)) {
         tokenVal.value = token
+        if (tokenVal.value === '') tokenVal.value = 0
     } else {
+
         tokenVal.value = 0
     }
 
@@ -84,5 +84,4 @@ showTokens.addEventListener('click', function () {
         elder.style.opacity = 1
         autofail.style.opacity = 0
     }
-    console.log(elder.style.opacity == 0)
 })
