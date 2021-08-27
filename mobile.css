@@ -2,6 +2,12 @@
     nav {
         margin-bottom:40px;
     }
+
+    #showTokens {
+        display: block;
+        opacity: 1
+    }
+
     #main {
         display:block;
     }
@@ -11,6 +17,39 @@
         margin: auto;
     }
 
-    .tokenEl {
+    #tokens input {
+        font-size: 26px;
+        height:35px;
     }
+    .tokenImg {
+        width: 70px;
+        height: auto
+    }
+
+    #testAndResult {
+        width: 90%;
+        display: grid;
+        grid-template-columns: [line1] 50% [line2] 50% [line3];
+        margin: 0 auto;
+        font-size: 30px
+    }
+
+    #testAndResult section:not(:first-child) {
+        grid-template-rows: repeat(5, 45px [row]);
+        grid-template-columns: [line1] 60% [line2] 30% [line3];
+    }
+    #test {
+        width: 100%;
+        grid-column-start: line1;
+        grid-column-end: line3;
+    }
+
+    #test input {
+        font-size: 26px
+    }
+
+    .button {
+        font-size:26px
+    }
+    #calc{font-size: 26px}
 }

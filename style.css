@@ -22,6 +22,11 @@ nav img {
     margin:auto;
     max-width:100%;
 }
+
+#showTokens {
+    display: block;
+}
+
 #main {
     display: grid;
     grid-template-columns: [line1] 25% [line2] 50% [line3] 25% [line4];
@@ -36,7 +41,6 @@ nav img {
     opacity: 0
 }
 #tokens {
-    width: 300px;
     margin-bottom: 40px;
     z-index: 1;
     position: relative
@@ -146,7 +150,6 @@ nav img {
     padding: 0 10px
 }
 #test {
-    width: 300px;
     display: grid;
     grid-gap: 5px;
     padding-top:10px;
@@ -167,7 +170,6 @@ nav img {
 
     /* results section */
 #results {
-    width: 300px;
     display: grid;
     grid-template-columns: [line1] 50% [line2] 30% [line3];
     grid-template-rows: repeat(5, 25px [row]);
@@ -183,7 +185,6 @@ nav img {
 }
 
 #preview {
-    width: 300px;
     display: grid;
     grid-template-columns: [line1] 50% [line2] 30% [line3];
     grid-template-rows: repeat(5, 25px [row]);

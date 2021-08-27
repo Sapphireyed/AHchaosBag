@@ -1,9 +1,9 @@
 ﻿@keyframes slideUp {
-    0% { margin-top:0 }
-    100% {margin-top: -760px}
+    0% { margin-top:0; opacity:1 }
+    100% {margin-top: -890px; opacity: 0}
 }
 
 @keyframes slideDown {
-    0% { margin-top: -760px }
-    100% { margin-top: 0 }
+    0% { margin-top: -890px; opacity: 0 }
+    100% { margin-top: 0; opacity: 1 }
 }
