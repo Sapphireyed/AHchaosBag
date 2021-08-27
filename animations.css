@@ -1,3 +1,9 @@
-﻿body{
+﻿@keyframes slideUp {
+    0% { margin-top:0 }
+    100% {margin-top: -760px}
+}
 
+@keyframes slideDown {
+    0% { margin-top: -760px }
+    100% { margin-top: 0 }
 }

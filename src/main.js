@@ -64,9 +64,24 @@ create.className = 'button'
 create.innerHTML = 'Create'
 document.getElementById('tokens').appendChild(create)
 
-// make tokenscontainer be equal to bag container
-//let width = document.getElementById('bagImg').clientWidth + 'px'
-//let height = document.getElementById('bagImg').clientHeight + 'px'
-//let bagTkens = document.getElementById('bagTokens')
-//bagTokens.style.width = width * 0.8
-//bagTokens.style.height = height
+// hide/show tokens on mobile
+let showTokens = document.getElementById('showTokens')
+
+showTokens.addEventListener('click', function () {
+    let tokens = document.getElementById('tokens')
+    let elder = document.querySelectorAll('.showImg')[0]
+    let autofail = document.querySelectorAll('.showImg')[1]
+
+    if (elder.style.opacity == 1) {
+        tokens.style.animation = 'slideDown 2s ease 0s forwards'
+        tokens.style.zIndex = 1
+        elder.style.opacity = 0
+        autofail.style.opacity = 1
+    } else {
+        tokens.style.animation = 'slideUp 2s ease 0s forwards'
+        tokens.style.zIndex = -2
+        elder.style.opacity = 1
+        autofail.style.opacity = 0
+    }
+    console.log(elder.style.opacity == 0)
+})

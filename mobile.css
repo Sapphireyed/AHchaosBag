@@ -1,0 +1,16 @@
+﻿@media only screen and (max-width: 980px) {
+    nav {
+        margin-bottom:40px;
+    }
+    #main {
+        display:block;
+    }
+
+    #tokens {
+        width: 60%;
+        margin: auto;
+    }
+
+    .tokenEl {
+    }
+}

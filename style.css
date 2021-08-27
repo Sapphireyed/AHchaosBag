@@ -27,10 +27,19 @@ nav img {
     grid-template-columns: [line1] 25% [line2] 50% [line3] 25% [line4];
 }
 /*tokens section*/
+.showImg {
+    position: absolute;
+    opacity:1;
+    z-index:1
+}
+.showImg:first-child {
+    opacity: 0
+}
 #tokens {
     width: 300px;
-    margin-bottom:40px;
-    z-index: 1
+    margin-bottom: 40px;
+    z-index: 1;
+    position: relative
 }
 
 .tokenHeader {
@@ -104,7 +113,7 @@ nav img {
 #bagImg {
     display: block;
     margin: 5% auto;
-    width:100%;
+    max-width:100%;
     height: auto;
     opacity: .8
 }
@@ -128,7 +137,8 @@ nav img {
 
 /* test info */
 #testAndResult {
-    font-size:20px;
+    font-size: 20px;
+    justify-self: center;
 }
 #testAndResult section {
     background-color: var(--green);
@@ -181,4 +191,3 @@ nav img {
     grid-column-gap: 15px;
     justify-content: space-between
 }
-
