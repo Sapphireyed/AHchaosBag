@@ -6,6 +6,7 @@ const bag = {
     'Tablet': 0,
     'Elder Thing': 0,
     'Cultist': 0,
+    'Bless':0,
     '0':0,
     '1': 0,
     '-1': 0,

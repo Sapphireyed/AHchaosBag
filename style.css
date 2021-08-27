@@ -24,7 +24,7 @@ nav img {
 }
 
 #showTokens {
-    display: block;
+    display: none;
 }
 
 #main {

@@ -11,10 +11,10 @@ function calcTokenChance(obj, token) {
 
 // calculates win chance. obj = bag, 
 //regular = general win chance calc, if set to false it calculates lose chance by 2 or less
-function calcWinChance(obj, testval = testVal, difficult, regular = true) {
+function calcWinChance(obj, testval, difficult, regular=true) {
 
-    let diff = difficult
-    let testVal = testval
+    let diff = parseInt(difficult)
+    let testVal = parseInt(testval)
 
     let win = 0
     let lose = 0
@@ -34,8 +34,14 @@ function calcWinChance(obj, testval = testVal, difficult, regular = true) {
             }
         }
         if (regular === false) {
-            testVal = 0
-            if ((diff - el.value - testVal <= 2) && (diff - el.value - testVal > 0)) {
+ 
+            let tempVal = el.name === 'Auto-fail' ? 0 : testVal
+            console.log('test', tempVal)
+            console.log('elval', el.name, el.value)
+            console.log('diff', diff)
+            console.log('res', (tempVal + el.value))
+            if (((tempVal + el.value) - diff == -2) || ((tempVal + el.value) - diff == -1)) {
+                console.log('yes')
                 loseBy2 = loseBy2 + parseInt(el.number)
             }
         }
@@ -52,26 +58,28 @@ function calcWinChance(obj, testval = testVal, difficult, regular = true) {
     return winChance
 }
 
-function chanceWithBless() {
-    let blessChance = calcTokenChance(obj, 'bless')
-    bless.number--
-
-    if (bless.number > 0) {
-        return calcTokenChance(obj, 'bless') * calcWinChance(obj)
-    } else {
-        let finalChance = blessChance / 100 * (winChance / 100)
-        console.log('lose', lose)
-        return winChance
-    }
+function chanceWithBless(objExt, obj) {
+    let blessChance = calcTokenChance(objExt, 'bless')
+    console.log(objExt.findIndex(el => el.name === 'Bless'))
+    //if (bless.number > 0) {
+    //    return calcTokenChance(objExt, 'bless') * calcWinChance(obj)
+    //} else {
+    //    let finalChance = blessChance / 100 * (winChance / 100)
+    //    console.log('lose', lose)
+    //    return winChance
+    //}
 }
 
 // calculate button -> displays all chancesas per index.html -> results section
 document.getElementById('calc').addEventListener('click', function () {
     const newBag = finalBag(bag)
     const newBagExt = finalBagExt(newBag)
+    console.log('new', newBag)
+    console.log('newExt', newBagExt)
     const testVal = document.getElementById('testVal').value
     let difficulty = document.getElementById('diffVal').value
 
+    console.log(chanceWithBless(newBagExt, newBag))
     let winResult = document.getElementById('winResult')
     console.log('win', calcWinChance(newBag, testVal, difficulty))
     winResult.innerHTML = Math.floor(calcWinChance(newBag, testVal, difficulty)) + '%'

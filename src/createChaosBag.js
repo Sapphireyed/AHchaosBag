@@ -7,7 +7,7 @@ const finalBag = (obj) => {
             newBag.push({
                 name: label,
                 number: parseInt(v.value),
-                value: v.nextElementSibling.value,
+                value: parseInt(v.nextElementSibling.value),
                 next: v.nextElementSibling.nextElementSibling.checked
             })
         }
