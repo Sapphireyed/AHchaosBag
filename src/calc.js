@@ -11,7 +11,7 @@ function calcTokenChance(obj, token) {
 
 // calculates win chance. obj = bag, 
 //regular = general win chance calc, if set to false it calculates lose chance by 2 or less
-function calcWinChance(obj, testval=testVal, difficult, regular=true) {
+function calcWinChance(obj, testval = testVal, difficult, regular = true) {
 
     let diff = difficult
     let testVal = testval
@@ -38,7 +38,7 @@ function calcWinChance(obj, testval=testVal, difficult, regular=true) {
             if ((diff - el.value - testVal <= 2) && (diff - el.value - testVal > 0)) {
                 loseBy2 = loseBy2 + parseInt(el.number)
             }
-        } 
+        }
 
     }
     let total = lose + win
@@ -92,7 +92,7 @@ document.getElementById('calc').addEventListener('click', function () {
     let failBy2 = document.getElementById('failBy2')
     failBy2.innerHTML = Math.floor(calcWinChance(newBag, testVal, difficulty, false)) + '%'
 
-    console.log(calcWinChance(newBag, 5,4))
+    console.log(calcWinChance(newBag, 5, 4))
 })
 
 document.getElementById('create').addEventListener('click', function () {

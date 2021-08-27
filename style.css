@@ -1,6 +1,10 @@
 ﻿:root {
     --beige: #c6b9a0;
     --green: #0d4c4c;
+    --shadow: 1px 1px black, 1px -1px black, -1px 1px black, -1px -1px black, 
+        3px 3px var(--green), 3px -3px var(--green), -3px 3px var(--green), -3px -3px var(--green), 
+        5px 5px #06322d, 5px -5px #06322d, -5px 5px #06322d, -5px -5px #06322d, 
+        6px 6px black, 6px -6px black, -6px 6px black, -6px -6px black
 }
 
 * {
@@ -11,9 +15,12 @@ body {
     background-image: url('imgs/bg2.jpg');
     color: white
 }
+
+nav { margin-top:-20px}
 nav img {
     display:block;
     margin:auto;
+    max-width:100%;
 }
 #main {
     display: grid;
@@ -62,15 +69,29 @@ nav img {
     width:25%;
 }
 /* bag */
-#create {
+.button {
     display: block;
     margin: 10px auto;
+    color: var(--green);
     width: 40%;
     font-size: 20px;
     background-color: var(--beige);
-    box-shadow: 1px 1px black, 1px -1px black, -1px 1px black, -1px -1px black, 3px 3px var(--green), 3px -3px var(--green), -3px 3px var(--green), -3px -3px var(--green), 5px 5px #06322d, 5px -5px #06322d, -5px 5px #06322d, -5px -5px #06322d, 6px 6px black, 6px -6px black, -6px 6px black, -6px -6px black
+    box-shadow: var(--shadow);
+    border-radius:5px;
 }
-
+#calc {
+    font-size: 18px;
+    width: 30%;
+}
+.buttonBag {
+    position: absolute;
+    top: 37%;
+    left: 35%;
+    padding: 3px;
+}
+#draw {
+    width: 10%
+}
 #bagContainer {
     position: relative;
     display: grid
@@ -102,52 +123,57 @@ nav img {
 
 /* test info */
 #testAndResult {
-    font-size:20px
+    font-size:20px;
 }
 #testAndResult section {
-    background-color: 
+    background-color: var(--green);
+    box-shadow: var(--shadow);
+    padding: 0 10px
 }
 #test {
-    width: 300px
-}
-#test div {
+    width: 300px;
     display: grid;
-    grid-template-columns: [line1] 40% [line2] 30% [line3];
+    grid-gap: 5px;
+    padding-top:10px;
 }
+#test input {
+    background-color: rgba(255,255,255,.4);
+    height:25px;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+}
+    #test div {
+        display: grid;
+        grid-template-columns: [line1] 50% [line2] 30% [line3];
+        justify-content: space-between
+    }
 
     /* results section */
 #results {
     width: 300px;
     display: grid;
-    grid-template-columns: [line1] 45% [line2] 30% [line3];
-    grid-template-rows: repeat(5, 30px [row]);
-    row-gap: 8px;
-    column-gap:15px;
+    grid-template-columns: [line1] 50% [line2] 30% [line3];
+    grid-template-rows: repeat(5, 25px [row]);
+    row-gap: 5px;
+    column-gap: 15px;
+    justify-content: space-between
 }
-#resultsHeader {
+.resultsHeader {
     grid-column-start: line1;
     grid-column-end: line3;
     justify-self: center;
+    margin-top:10px;
 }
 
 #preview {
-    width:300px;
+    width: 300px;
     display: grid;
-    grid-template-columns: [line1] 45% [line2] 30% [line3];
-    grid-template-rows: repeat(10, 30px [row]);
-    grid-row-gap:8px;
+    grid-template-columns: [line1] 50% [line2] 30% [line3];
+    grid-template-rows: repeat(5, 25px [row]);
+    grid-row-gap: 5px;
     grid-column-gap: 15px;
+    justify-content: space-between
 }
 
-#prevHeader {
-    grid-column-start: line1;
-    grid-column-end: line3;
-    justify-self: center;
-    border-bottom: 3px solid #0d4c4c
-}
-/*    #prevHeader:after {
-        content: '';
-        width: 150px;
-        height: 50px;
-        background-color: red;
-    }*/

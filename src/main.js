@@ -60,6 +60,7 @@ for (token in bag) {
 // add create button to create a final bag
 let create = document.createElement('button')
 create.id = 'create'
+create.className = 'button'
 create.innerHTML = 'Create'
 document.getElementById('tokens').appendChild(create)
 
