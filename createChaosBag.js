@@ -25,3 +25,16 @@ const finalBagExt = (obj) => {
     }
     return newBag
 }
+
+// in html
+document.getElementById('create').addEventListener('click', function () {
+    let createdBag = finalBag(bag)
+    createdBag = finalBagExt(createdBag)
+    let bagEl = document.getElementById('bagTokens')
+    bagEl.innerHTML = ''
+    createdBag.map(token => {
+        let bagToken = document.createElement('img')
+        bagToken.src = "imgs/tokens/" + token.name + ".png"
+        bagEl.appendChild(bagToken)
+    })
+})

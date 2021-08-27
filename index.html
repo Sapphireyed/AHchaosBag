@@ -14,13 +14,18 @@
                 <div class="tokenEl tokenHeader"></div>
                 <div class="tokenEl tokenHeader">Number</div>
                 <div class="tokenEl tokenHeader">Value</div>
+                <div class="tokenEl tokenHeader">Next</div>
             </div>
         </section>
         <section id="bag">
+            <div id="bagContainer">
+                <div id="bagTokens"></div>
+                <img id="bagImg" src="imgs/bag.png" />
+            </div>
 
         </section>
         <section id="testAndResult">
-            <section id="test">
+            <!--<section id="test">
                 <div>
                     <label>Test Difficulty</label>
                     <input id="diffVal" value="0" />
@@ -30,9 +35,19 @@
                     <input id="testVal" value="0" />
                 </div>
                 <button id="calc">Calculate</button>
-            </section>
-            <section id="results">
+            </section>-->
+            <!--<section id="results">
+                <h3 id="resultsHeader" class="resultsHeader">Report</h3>
                 <p class="chanceType">Win chance: </p><p class="chanceResult" id="winResult"></p>
+
+            </section>-->
+            <section id="preview">
+                <h3 id="prevHeader" class="resultsHeader">Preview</h3>
+                <p class="prev">At -1:</p><p id="at-1chance"></p>
+                <p class="prev">At  0:</p><p id="at0chance"></p>
+                <p class="prev">At +1:</p><p id="at+1chance"></p>
+                <p class="prev">At +2:</p><p id="at+2chance"></p>
+                <p class="prev">At +3:</p><p id="at+3chance"></p>
                 <p class="chanceType">Skull chance: </p><p class="chanceResult" id="skullResult"></p>
                 <p class="chanceType">Bullshit chance: </p><p class="chanceResult" id="bullshitResult"></p>
                 <p class="chanceType">Win by 2+: </p><p class="chanceResult" id="by2orMoreResult"></p>
