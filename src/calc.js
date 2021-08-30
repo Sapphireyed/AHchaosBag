@@ -24,9 +24,7 @@ function calcWinChance(obj, testval, difficult, regular=true) {
         let el = obj[i]
         if (el.name === 'Auto-fail') {
             lose++
-        } else if (el.name === 'bless') {
-
-        } else {
+        }  else {
             if (diff - el.value <= testVal) {
                 win = win + parseInt(el.number)
             } else if (diff - el.value > testVal) {
@@ -34,8 +32,6 @@ function calcWinChance(obj, testval, difficult, regular=true) {
             }
         }
         if (regular === false) {
-            testVal = testVal > 0 ? 0 : testVal
-            console.log(testVal)
             let tempVal = el.name === 'Auto-fail' ? 0 : testVal
             let finalSkill = tempVal + el.value
             finalSkill = finalSkill < 0 ? 0 : finalSkill
@@ -56,30 +52,16 @@ function calcWinChance(obj, testval, difficult, regular=true) {
     return winChance
 }
 
-function chanceWithBless(objExt, obj) {
-    let blessChance = calcTokenChance(objExt, 'bless')
-    console.log(objExt.findIndex(el => el.name === 'Bless'))
-    //if (bless.number > 0) {
-    //    return calcTokenChance(objExt, 'bless') * calcWinChance(obj)
-    //} else {
-    //    let finalChance = blessChance / 100 * (winChance / 100)
-    //    console.log('lose', lose)
-    //    return winChance
-    //}
-}
 
 // calculate button -> displays all chancesas per index.html -> results section
 document.getElementById('calc').addEventListener('click', function () {
-    const newBag = finalBag(bag)
-    const newBagExt = finalBagExt(newBag)
-    console.log('new', newBag)
-    console.log('newExt', newBagExt)
     const testVal = document.getElementById('testVal').value
     let difficulty = document.getElementById('diffVal').value
 
-    console.log(chanceWithBless(newBagExt, newBag))
+    const newBag = finalBag(bag)
+    const newBagExt = finalBagExt(newBag)
+
     let winResult = document.getElementById('winResult')
-    console.log('win', calcWinChance(newBag, testVal, difficulty))
     winResult.innerHTML = Math.floor(calcWinChance(newBag, testVal, difficulty)) + '%'
 
     let skullResult = document.getElementById('skullResult')
@@ -97,8 +79,6 @@ document.getElementById('calc').addEventListener('click', function () {
 
     let failBy2 = document.getElementById('failBy2')
     failBy2.innerHTML = Math.floor(calcWinChance(newBag, testVal, difficulty, false)) + '%'
-
-    console.log(calcWinChance(newBag, 5, 4))
 })
 
 document.getElementById('create').addEventListener('click', function () {
@@ -121,6 +101,4 @@ document.getElementById('create').addEventListener('click', function () {
 
     let at3chance = document.getElementById('at+3chance')
     at3chance.innerHTML = Math.floor(calcWinChance(newBag, 3, 0)) + '%'
-
-    console.log(calcWinChance(newBag, 5, 4))
 })
