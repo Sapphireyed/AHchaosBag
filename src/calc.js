@@ -1,5 +1,5 @@
 // calculate chances to draw a specific token. give it bag object and token name
-function calcTokenChance(obj, token) {
+calcTokenChance = (obj, token) => {
     let total = obj.length
     let tokenEl = obj.find(o => o.name === token)
     if (tokenEl) {
@@ -11,7 +11,7 @@ function calcTokenChance(obj, token) {
 
 // calculates win chance. obj = bag, 
 //regular = general win chance calc, if set to false it calculates lose chance by 2 or less
-function calcWinChance(obj, testval, difficult, regular=true) {
+calcWinChance = (obj, testval, difficult, regular=true) => {
 
     let diff = parseInt(difficult)
     let testVal = parseInt(testval)
@@ -54,7 +54,7 @@ function calcWinChance(obj, testval, difficult, regular=true) {
 
 
 // calculate button -> displays all chancesas per index.html -> results section
-document.getElementById('calc').addEventListener('click', function () {
+document.getElementById('calc').addEventListener('click', () => {
     const testVal = document.getElementById('testVal').value
     let difficulty = document.getElementById('diffVal').value
 
@@ -81,7 +81,7 @@ document.getElementById('calc').addEventListener('click', function () {
     failBy2.innerHTML = Math.floor(calcWinChance(newBag, testVal, difficulty, false)) + '%'
 })
 
-document.getElementById('create').addEventListener('click', function () {
+document.getElementById('create').addEventListener('click', () => {
     const newBag = finalBag(bag)
     const newBagExt = finalBagExt(newBag)
     const testVal = document.getElementById('testVal').value

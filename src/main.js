@@ -67,7 +67,7 @@ document.getElementById('tokens').appendChild(create)
 // hide/show tokens on mobile
 let showTokens = document.getElementById('showTokens')
 
-showTokens.addEventListener('click', function () {
+showTokens.addEventListener('click', () => {
     let tokens = document.getElementById('tokens')
     let elder = document.querySelectorAll('.showImg')[0]
     let autofail = document.querySelectorAll('.showImg')[1]

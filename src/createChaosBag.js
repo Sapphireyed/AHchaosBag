@@ -28,7 +28,7 @@ const finalBagExt = (obj) => {
 }
 
 // in html
-document.getElementById('create').addEventListener('click', function () {
+document.getElementById('create').addEventListener('click', () => {
     let createdBag = finalBag(bag)
     createdBag = finalBagExt(createdBag)
     let bagEl = document.getElementById('bagTokens')

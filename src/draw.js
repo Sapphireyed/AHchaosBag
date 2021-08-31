@@ -1,5 +1,5 @@
 //check if token has next value set to true and draw it tooif yes
-function drawNext(bag) {
+drawNext (bag) => {
     // find randomindex, draw random token, add styling to chosen token
     let rand = Math.floor(Math.random() * bag.length)
     bag[rand].style.width = '120%'
@@ -15,7 +15,7 @@ function drawNext(bag) {
     }
 }
 
-document.getElementById('draw').addEventListener('click', function () {
+document.getElementById('draw').addEventListener('click', () => {
     // firstidentify the bag and removestyling from previous draw
     let bag = Array.from(document.querySelectorAll('#bagTokens img'))
     bag.map(el => {
@@ -25,7 +25,7 @@ document.getElementById('draw').addEventListener('click', function () {
     drawNext(bag)
 })
 
-document.getElementById('add').addEventListener('click', function () {
+document.getElementById('add').addEventListener('click', () => {
     let bag = Array.from(document.querySelectorAll('#bagTokens img'))
     bag = bag.filter(t => t.style.width !== '120%')
     console.log(bag)
