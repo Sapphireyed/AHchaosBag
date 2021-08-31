@@ -1,5 +1,5 @@
 //check if token has next value set to true and draw it tooif yes
-drawNext (bag) => {
+const drawNext = (bag) => {
     // find randomindex, draw random token, add styling to chosen token
     let rand = Math.floor(Math.random() * bag.length)
     bag[rand].style.width = '120%'
