@@ -22,6 +22,13 @@ calcWinChance = (obj, testval, difficult, regular=true) => {
 
     for (let i = 0; i < obj.length; i++) {
         let el = obj[i]
+        console.log(el.next)
+        if (el.next === true) {
+            obj.splice(i, 1)
+            console.log(el.next)
+            console.log(obj)
+            return calcWinChance(obj, testVal + el.value, diff)
+        }
         if (el.name === 'Auto-fail') {
             lose++
         }  else {
@@ -49,6 +56,7 @@ calcWinChance = (obj, testval, difficult, regular=true) => {
     }
 
     let winChance = win * 100 / total
+
     return winChance
 }
 
